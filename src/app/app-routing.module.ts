@@ -1,9 +1,6 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {HomeComponent} from './pages/home/home.component';
-import {UdbanktransactionComponent} from './pages/udbanktransaction/udbanktransaction.component';
-import {UdbpcsComponent} from './pages/udbpcs/udbpcs.component';
-import {UdsapComponent} from './pages/udsap/udsap.component';
 import { UdvdataComponent } from './pages/udvdata/udvdata.component';
 import { DuplicatepaymentComponent } from './pages/duplicatepayment/duplicatepayment.component';
 import { PaymentadvicenoteComponent } from './pages/paymentadvicenote/paymentadvicenote.component';
@@ -14,9 +11,6 @@ import {LoginComponent} from './login/login.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
-  { path: 'banktransctions', component: UdbanktransactionComponent},
-  { path: 'Udbpcs', component: UdbpcsComponent},
-  {path: 'udsap', component: UdsapComponent},
   {path: 'udvdata', component: UdvdataComponent},
   {path:'duplicatepayment', component: DuplicatepaymentComponent},
   {path:'paymentadvicenote', component: PaymentadvicenoteComponent},
@@ -32,4 +26,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [HomeComponent, UdbanktransactionComponent, UdbpcsComponent, UdsapComponent, UdvdataComponent, DuplicatepaymentComponent, PaymentadvicenoteComponent, PaymentreconsilationComponent ]
+export const routingComponents = [HomeComponent, UdvdataComponent, DuplicatepaymentComponent, PaymentadvicenoteComponent, PaymentreconsilationComponent ]

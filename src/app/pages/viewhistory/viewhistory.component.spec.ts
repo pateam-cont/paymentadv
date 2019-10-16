@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UdbpcsComponent } from './udbpcs.component';
+import { ViewhistoryComponent } from './viewhistory.component';
 
-describe('UdbpcsComponent', () => {
-  let component: UdbpcsComponent;
-  let fixture: ComponentFixture<UdbpcsComponent>;
+describe('ViewhistoryComponent', () => {
+  let component: ViewhistoryComponent;
+  let fixture: ComponentFixture<ViewhistoryComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UdbpcsComponent ]
+      declarations: [ ViewhistoryComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UdbpcsComponent);
+    fixture = TestBed.createComponent(ViewhistoryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

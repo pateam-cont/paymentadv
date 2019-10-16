@@ -1,4 +1,12 @@
-
+<ngx-spinner
+bdOpacity = 0.9
+bdColor = "#333"
+size = "medium"
+color = "#fff"
+type = "ball-fussion"
+fullScreen = "true">
+<p style="color: white" > Loading... </p>
+</ngx-spinner>
 <header class="main-header">
     <!-- Logo -->
     <a routerLink="home" class="logo">
@@ -259,7 +267,7 @@
             </li>
             <li>
                 <a routerLink="duplicatepayment">
-                  <i class="fa fa-dashboard"></i> <span>Duplicate Payment</span>
+                  <i class="fa fa-dashboard"></i> <span>Duplicate Records</span>
                 </a>
               </li>
               <li>
@@ -272,20 +280,13 @@
                   <i class="fa fa-dashboard"></i> <span>Payment Reconsilation</span>
                 </a>
               </li>
-            <li class="treeview">
+            <li class="treeview" routerLink="udvdata">
               <a href="#">
                 <i class="fa fa-upload"></i>
                 <span>Upload Files</span>
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
+               
               </a>
-              <ul class="treeview-menu">
-                <li><a routerLink="Udbpcs" routerLinkActive="active"><i class="fa fa-circle-o"></i> Upload BPCS File</a></li>
-                <li><a routerLink="udsap"><i class="fa fa-circle-o"></i> Upload SAP File</a></li>
-                <li><a routerLink="banktransctions"><i class="fa fa-circle-o"></i> Upload Bank Transactions</a></li>
-                <li><a routerLink="udvdata"><i class="fa fa-circle-o"></i> Upload Vendor Data</a></li>
-              </ul>
+              
             </li>
             <li>
               <a href="#">

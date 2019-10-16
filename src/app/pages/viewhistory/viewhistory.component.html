@@ -1,0 +1,99 @@
+<div class="content-wrapper" style="min-height: 956px;">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+           <h1>
+                View Reports
+           </h1>
+           <ol class="breadcrumb">
+              <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+              <li class="active">View Reports</li>
+           </ol>
+        </section>
+        <div class="row">
+           <div class="col-md-12">{{uploadfileresult}}</div>
+        </div>
+        <!-- Main content -->
+        <section class="content">
+           <div class="row">
+              <!-- right column -->
+              <div class="col-md-12">
+                 <!-- Horizontal Form -->
+                 
+                 <div class="box">
+                    <div class="box-header">
+                       <h3 class="box-title">View Reports</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                       <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+                          <div class="row">
+                             <div class="col-sm-6">
+                                <div class="dataTables_length" id="example1_length">
+                                   <label>
+                                      Show 
+                                      <select name="example1_length" [(ngModel)]="itemsPerPage" aria-controls="example1" class="form-control input-sm">
+                                         <option value="10">10</option>
+                                         <option value="25">25</option>
+                                         <option value="50">50</option>
+                                         <option value="100">100</option>
+                                      </select>
+                                      entries
+                                   </label>
+                                </div>
+                             </div>
+                             <div class="col-sm-6">
+                                <div id="example1_filter" class="dataTables_filter"><label>Search:&nbsp;<input type="search" class="form-control input-sm" placeholder="" aria-controls="example1"></label></div>
+                             </div>
+                          </div>
+                          <div class="row">
+                             <div class="col-sm-12 table-responsive">
+                                <table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
+                                   <thead>
+                                      <tr role="row">
+                                         <th class="sorting_asc" tabindex="0"  aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 182px;">Vendor code</th>
+                                         <th class="sorting" tabindex="0"   style="width: 224px;">Vendor name</th>
+                                         <th class="sorting" tabindex="0"   style="width: 199px;"> Email id</th>
+                                         <th class="sorting" tabindex="0"   style="width: 156px;">Bank a/c</th>
+                                         <th class="sorting" tabindex="0"  style="width: 156px;">IFSC code</th>
+                                         <th class="sorting" tabindex="0"  style="width: 156px;">Bank name</th>
+                                         <th class="sorting" tabindex="0"  style="width: 156px;">Cheque/utr no.</th>
+                                         <th class="sorting" tabindex="0"  style="width: 156px;">Advice note Mail Send</th>
+                                      </tr>
+                                   </thead>
+                                   <tbody>
+                                      <tr *ngFor="let row of advisnotearr | paginate: { itemsPerPage: itemsPerPage, currentPage: p }" role="row" class="odd">
+                                         <td class="sorting_1">{{row.VendorCode  == 'NULL' ? '':row.VendorCode}}</td>
+                                         <td>{{row.VendorContanctName == 'NULL' ? '':row.VendorContanctName}}</td>
+                                         <td>{{row.VendorEmail == 'NULL' ? '':row.VendorEmail}}</td>
+                                         <td>{{row.VendorAccount == 'NULL' ? '':row.VendorAccount}}</td>
+                                         <td>{{row.VendorBankIFSC == 'NULL' ? '':row.VendorBankIFSC}}</td>
+                                         <td>{{row.VendorBankName == 'NULL' ? '':row.VendorBankName}}</td>
+                                         <td>{{row.ChequeUTRNo == 'NULL' ? '':row.ChequeUTRNo}}</td>
+                                         <td>{{row.MailSendFlag == 'NULL' ? '':row.MailSendFlag}}</td>
+                                      </tr>
+                                   </tbody>
+                                </table>
+                             </div>
+                          </div>
+                          <div class="row">
+                             <div class="col-sm-5">
+                                    <div class="dataTables_info" id="example1_info" role="status" aria-live="polite">Showing {{(itemsPerPage < advisnotearr.length ? itemsPerPage : advisnotearr.length)}} of {{advisnotearr.length}} entries</div>
+                             </div>
+                             <div class="col-sm-7">
+                                <div class="dataTables_paginate paging_simple_numbers" id="example1_paginate">
+                                   <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                    <!-- /.box-body -->
+                 </div>
+                 <!-- /.box -->
+              </div>
+              <!--/.col (right) -->
+           </div>
+           <!-- /.row -->
+        </section>
+        <!-- /.content -->
+     </div>
