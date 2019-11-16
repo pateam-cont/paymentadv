@@ -19,6 +19,7 @@ export class UploadFileService {
     this.baseurl=this.env=="dev"?"https://localhost:44314/":"https://krios.azurewebsites.net/";
     this.url=this.baseurl+"api/FileUpload/";
     this.fileurl=this.baseurl+"";
+    console.log(this.url)
   }
 
   uploadfile(filetype,fileToUpload):Observable<any>{
@@ -62,7 +63,7 @@ export class UploadFileService {
   }
 
   GetSAPBPCSAdviceNotePending():Observable<any>{
-    return this.http.get(this.url+"GetSAPBPCSAdviceNotePending",httpOptions);
+    return this.http.get(this.url+"GetSAPBPCSPending",httpOptions);
   }
 
   Login(username:string,password:string):Observable<any>{

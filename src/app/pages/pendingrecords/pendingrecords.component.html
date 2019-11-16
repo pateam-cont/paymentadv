@@ -18,7 +18,28 @@
               <!-- right column -->
               <div class="col-md-12">
                  <!-- Horizontal Form -->
-                 
+                 <div class="box">
+                     <div class="box-body">
+                        
+                        <!-- form start -->
+                        
+                        <div class="row">
+                           <div class="form-group col-xs-4">
+                              <label for="uploadfiletype">From Date</label>
+                              <input  type="text" autocomplete="off" bsDatepicker id="fromdate"  [maxDate]="todate" name="fromdate" value="{{fromdate | date:'dd-MM-yyyy'}}"  maxlength="100" class="form-control" (bsValueChange)="getdate($event,1)" placeholder="From date" title="Please Enter date">
+                           </div>
+                           <div class="form-group col-xs-4">
+                                 <label for="uploadfiletype">To Date</label>
+                                 <input  type="text" autocomplete="off" bsDatepicker id="todate"  [minDate]="fromdate" name="todate" value="{{todate | date:'dd-MM-yyyy'}}"  maxlength="100" class="form-control" (bsValueChange)="getdate($event,2)" placeholder="To date" title="Please Enter date">
+                           </div>
+                           <div class="form-group col-xs-4">
+                              <button type="button" (click)="searchresult()" class="btn btn-primary mb-2">Search</button>
+                           </div>
+                        </div>
+                       
+                     </div>
+                  </div>
+                  <!-- /.box -->
                  <div class="box">
                   
                     <!-- /.box-header -->
@@ -62,6 +83,7 @@
                                          <th class="sorting" tabindex="0" >Payment booking number</th>
                                          <th class="sorting" tabindex="0" >Company code</th>
                                          <th class="sorting" tabindex="0">Payment Date</th>
+                                         <th class="sorting" tabindex="0">Payment file upload date</th>
                                       </tr>
                                    </thead>
                                    <tbody>
@@ -72,8 +94,8 @@
                                          <td>{{row.PaymentRefNumber == 'NULL' ? '':row.PaymentRefNumber}}</td>
                                          <td>{{row.PaymentBookingNumber == 'NULL' ? '':row.PaymentBookingNumber}}</td>
                                          <td>{{row.CompanyCode == 'NULL' ? '':row.CompanyCode}}</td>
-                                         <td>{{row.PaymentDate == 'NULL' ? '':row.PaymentDate}}</td>
-                                        
+                                         <td>{{row.PaymentDate == 'NULL' ? '':row.PaymentDate }}</td>
+                                         <td>{{row.UploadDate == 'NULL' ? '':row.UploadDate | date:'d-m-y'}}</td>
                                       </tr>
                                    </tbody>
                                 </table>

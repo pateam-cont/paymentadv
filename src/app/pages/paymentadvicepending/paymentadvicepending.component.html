@@ -24,43 +24,32 @@
                     <!-- /.box-header -->
                     <div class="box-body">
                        <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
-                          <div class="row">
-                             <div class="col-sm-4">
-                                <div class="dataTables_length" id="example1_length">
-                                   <label>
-                                      Show entries
-                                      Show 
-                                      <select name="example1_length" [(ngModel)]="itemsPerPage" aria-controls="example1" class="form-control input-sm">
-                                         <option value="10">10</option>
-                                         <option value="25">25</option>
-                                         <option value="50">50</option>
-                                         <option value="100">100</option>
-                                      </select>
-                                      
-                                      entries
-                                   </label>
-                                </div>
-                             </div>
-                             <div class="col-sm-4">
-                                <div id="example1_filter" class="dataTables_filter"><label>Search:&nbsp;<input type="search" class="form-control input-sm" placeholder="" aria-controls="example1"></label></div>
-                             </div>
-                             <div class="col-xs-12 col-md-4 ">
-                                 <div class=" mb-sm-10 pull-md-right pull-md-right pull-sm-none">
-                              <button class="btn btn-small btn-success " (click)="exportAsXLSX()"><i class="fa fa-file-excel-o"></i></button>
+                           <div class="row">
+                                 <div class="col-sm-4">
+                                    <div class="dataTables_length" id="example1_length">
+                                       <label>
+                                          Show 
+                                          <select name="example1_length" [(ngModel)]="itemsPerPage" aria-controls="example1" class="form-control input-sm">
+                                             <option value="10">10</option>
+                                             <option value="25">25</option>
+                                             <option value="50">50</option>
+                                             <option value="100">100</option>
+                                          </select>
+                                          entries
+                                       </label>
+                                    </div>
+                                 </div>
+                                 <div class="col-sm-4">
+                                    <div id="example1_filter" class="dataTables_filter"><label>Search:&nbsp;
+                                          <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search">
+                                       </label></div>
+                                 </div>
+                                 <div class="col-sm-4">
+                                  
+                                  <button (click)="exportAsXLSX()"><i class="fa fa-file-excel-o"></i></button>
+                               </div>
                               </div>
-                           </div>
-                          </div>
-                          <div class="row" style="margin: 0;">
-                             <div class="table-responsive">
-                                <div id="example1_filter" class="dataTables_filter"><label>Search:&nbsp;
-                                    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search">
-                                 </label></div>
-                             </div>
-                             <div class="col-sm-4">
-                              
-                              <button (click)="exportAsXLSX()"><i class="fa fa-file-excel-o"></i></button>
-                           </div>
-                          </div>
+                          
                           <div class="row">
                              <div class="col-sm-12 table-responsive">
                                 <table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">

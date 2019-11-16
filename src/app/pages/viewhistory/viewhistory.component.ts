@@ -4,6 +4,7 @@ import { BsModalRef, BsModalService, CarouselConfig } from 'ngx-bootstrap';
 import { UploadFileService } from 'src/app/upload-file.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ExcelService } from 'src/app/excel.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-viewhistory',
@@ -18,6 +19,8 @@ export class ViewhistoryComponent implements OnInit {
   chkData = [];
   searchText;
   url=""
+  fromdate;
+  todate;
   constructor(private spinner:NgxSpinnerService,private service:UploadFileService,
     private formBuilder: FormBuilder,
     private excelService:ExcelService) {
@@ -26,6 +29,13 @@ export class ViewhistoryComponent implements OnInit {
     });*/
     this.url=service.fileurl
    }
+
+   searchresult(){
+    this.spinner.show();
+    //this.getData()
+    this.advisnotearr=this.advisnotearr.filter(x => moment(x.UploadDate).isSameOrAfter(this.fromdate) && moment(x.UploadDate).isSameOrBefore(this.todate));
+    this.spinner.hide();
+  }
 
   ngOnInit() {
     this.getUploadedData()
@@ -44,6 +54,7 @@ export class ViewhistoryComponent implements OnInit {
     this.spinner.show();
     this.service.getPaymentAdvisNoteHeader().subscribe(
     data=>{
+      console.log(data)
       this.advisnotearr=data;
       console.log(this.advisnotearr);
       this.spinner.hide();
@@ -89,5 +100,7 @@ class PaymentAdviceNote{
   VendorBankName
   ChequeUTRNo
   MailSendFlag
+  UploadDate
+  InvoiceDate
 }
 

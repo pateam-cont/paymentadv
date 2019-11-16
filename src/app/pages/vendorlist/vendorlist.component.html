@@ -40,7 +40,8 @@
                             </div>
                          </div>
                          <div class="col-xs-6 col-md-4  mb-sm-10" >
-                            <div id="example1_filter" class="dataTables_filter"><label>Search:&nbsp;<input type="search" class="form-control input-sm" placeholder="" aria-controls="example1"></label></div>
+                            <div id="example1_filter" class="dataTables_filter"><label>Search:&nbsp;
+                                 <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search"></label></div>
                          </div>
                          <div class="col-xs-6 col-md-4  mb-sm-10">
                             <div class="mb-sm-10 pull-md-right pull-md-right pull-sm-none">

@@ -18,7 +18,29 @@
               <!-- right column -->
               <div class="col-md-12">
                  <!-- Horizontal Form -->
-                 
+                  <!-- Horizontal Form -->
+                  <div class="box">
+                        <div class="box-body">
+                           
+                           <!-- form start -->
+                           
+                           <div class="row">
+                              <div class="form-group col-xs-4">
+                                 <label for="uploadfiletype">From Date</label>
+                                 <input  type="text" autocomplete="off" bsDatepicker id="fromdate"  [maxDate]="todate" name="fromdate" value="{{fromdate | date:'dd-MM-yyyy'}}"  maxlength="100" class="form-control" (bsValueChange)="getdate($event,1)" placeholder="From date" title="Please Enter date">
+                              </div>
+                              <div class="form-group col-xs-4">
+                                    <label for="uploadfiletype">To Date</label>
+                                    <input  type="text" autocomplete="off" bsDatepicker id="todate"  [minDate]="fromdate" name="todate" value="{{todate | date:'dd-MM-yyyy'}}"  maxlength="100" class="form-control" (bsValueChange)="getdate($event,2)" placeholder="To date" title="Please Enter date">
+                              </div>
+                              <div class="form-group col-xs-4">
+                                 <button type="button" (click)="searchresult()" class="btn btn-primary mb-2">Search</button>
+                              </div>
+                           </div>
+                          
+                        </div>
+                     </div>
+                     <!-- /.box -->
                  <div class="box">
                   
                     <!-- /.box-header -->
@@ -41,7 +63,8 @@
                              </div>
                              <div class="col-xs-6 col-md-4">
                                 <div class="form-group mb-sm-10">
-                                <div id="example1_filter" class="dataTables_filter"><label>Search:&nbsp;<input type="search" class="form-control input-sm" placeholder="" aria-controls="example1"></label></div>
+                                <div id="example1_filter" class="dataTables_filter"><label>Search:&nbsp;
+                                    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search"></label></div>
                                  </div>
                               </div>
                              <div class="col-xs-12 col-md-4   ">
@@ -56,6 +79,7 @@
                                 <table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
                                    <thead>
                                       <tr role="row">
+                                          <th class="sorting" tabindex="0"  style="width: 156px;">Action</th>
                                          <th class="sorting_asc" tabindex="0"  aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 182px;">Vendor code</th>
                                          <th class="sorting" tabindex="0" style="min-width:300px;">Vendor name</th>
                                          <th class="sorting" tabindex="0"   style="width: 199px;"> Email id</th>
@@ -64,12 +88,18 @@
                                          <th class="sorting" tabindex="0"  style="width: 156px;">Bank name</th>
                                          <th class="sorting" tabindex="0"  style="width: 156px;">Cheque/utr no.</th>
                                          <th class="sorting" tabindex="0"  style="width: 156px;">Advice note Mail Send</th>
-                                         <th class="sorting" tabindex="0"  style="width: 156px;">Action</th>
+                                         <th class="sorting" tabindex="0"  style="width: 156px;">SAP/BPCS Payment file Upload date</th>
+                                         <th class="sorting" tabindex="0"  style="width: 156px;">Invoice generated Date</th>
                                       </tr>
                                    </thead>
                                    <tbody>
                                       <tr *ngFor="let row of advisnotearr | filter:searchText | paginate: { itemsPerPage: itemsPerPage, currentPage: p }" role="row" class="odd">
-                                         <td class="sorting_1">{{row.VendorCode  == 'NULL' ? '':row.VendorCode}}</td>
+                                          <td>
+                                                <input type="checkbox" name="sendnote"  (change)="checkboxaction($event,row.PaymentAdviceNoteHeaderID)" id="sendnote{{row.PaymentAdviceNoteHeaderID}}"/>
+                                                &nbsp;<a *ngIf="row.MailSendFlag == 'Y'" target="_blank" href="{{url}}AdviceNotePdf/PaymentNote-{{row.VendorCode}}-{{row.PaymentAdviceNoteHeaderID}}.pdf">
+                                                 <i title="Export PDF" class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+                                             </td>  
+                                       <td class="sorting_1">{{row.VendorCode  == 'NULL' ? '':row.VendorCode}}</td>
                                          <td>{{row.VendorName == 'NULL' ? '':row.VendorName}}</td>
                                          <td>{{row.VendorEmail == 'NULL' ? '':row.VendorEmail}}</td>
                                          <td>{{row.VendorAccount == 'NULL' ? '':row.VendorAccount}}</td>
@@ -77,11 +107,8 @@
                                          <td>{{row.VendorBankName == 'NULL' ? '':row.VendorBankName}}</td>
                                          <td>{{row.ChequeUTRNo == 'NULL' ? '':row.ChequeUTRNo}}</td>
                                          <td>{{row.MailSendFlag == 'NULL' ? '':row.MailSendFlag}}</td>
-                                         <td>
-                                            <input type="checkbox" name="sendnote"  (change)="checkboxaction($event,row.PaymentAdviceNoteHeaderID)" id="sendnote{{row.PaymentAdviceNoteHeaderID}}"/>
-                                            &nbsp;<a *ngIf="row.MailSendFlag == 'Y'" target="_blank" href="{{url}}AdviceNotePdf/PaymentNote-{{row.VendorCode}}-{{row.PaymentAdviceNoteHeaderID}}.pdf">
-                                             <i title="Export PDF" class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
-                                         </td>
+                                         <td>{{row.UploadDate == 'NULL' ? '':row.UploadDate}}</td>
+                                         <td>{{row.InvoiceDate == 'NULL' ? '':row.InvoiceDate}}</td>
                                       </tr>
                                    </tbody>
                                 </table>

@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { VendorlistComponent } from './pages/vendorlist/vendorlist.component';
 import { PaymentadvicependingComponent } from './pages/paymentadvicepending/paymentadvicepending.component';
 import {MatButtonModule} from '@angular/material/button';
+import { PendingrecordsComponent } from './pages/pendingrecords/pendingrecords.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path: 'paymentreconsilation', component:PaymentreconsilationComponent},
   {path: 'viewhistory', component: ViewhistoryComponent},
   {path:'paymentadvicenotepending', component: PaymentadvicependingComponent},
+  {path:'sapbpcspending', component: PendingrecordsComponent},
   {path:'vendorlist',component:VendorlistComponent}
   ]
 }
@@ -46,4 +48,4 @@ export const routingComponents = [LoginComponent,
   HomeComponent, 
   UdvdataComponent, DuplicatepaymentComponent, 
   PaymentadvicenoteComponent, PaymentreconsilationComponent,
-  ViewhistoryComponent,VendorlistComponent,PaymentadvicependingComponent ]
+  ViewhistoryComponent,VendorlistComponent,PaymentadvicependingComponent,PendingrecordsComponent ]

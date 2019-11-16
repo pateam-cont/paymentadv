@@ -32,10 +32,11 @@ import { PendingrecordsComponent } from './pages/pendingrecords/pendingrecords.c
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    BsDatepickerModule.forRoot(),
     ModalModule.forRoot(),
     ReactiveFormsModule,
     HttpClientModule,
-    NgxSpinnerModule, NgxPaginationModule,Ng2SearchPipeModule
+    NgxSpinnerModule, NgxPaginationModule,Ng2SearchPipeModule, BrowserAnimationsModule
   ],
   providers: [UploadFileService,BsModalRef],
   bootstrap: [AppComponent]
