@@ -27,7 +27,7 @@
                         <div class="form-group col-xs-6">
                            <label for="uploadfiletype">File type</label>
                            <select class="form-control" (change)="getExcelTemplate(f.uploadfiletype.value)"  formControlName="uploadfiletype" [ngClass]="{ 'is-invalid': submitted && f.uploadfiletype.errors }">
-                              <option value="">--select type--</option>
+                              <option value="">--Select Type--</option>
                               <option value="SAP">SAP Payment Details</option>
                               <option value="BPCS">BPCS Payment Details</option>
                               <option value="Bank">Bank</option>
