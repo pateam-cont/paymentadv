@@ -3,52 +3,115 @@
     <section class="sidebar">
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li>
+        <!--<li>
           <a routerLink="/home">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
+        </li>-->
+        <li class="treeview" style="height: auto;">
+          <a href="#">
+            <i class="fa fa-pie-chart"></i>
+            <span>Payment Advice Note</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu" style="display: none;">
+              <li>
+                  <a routerLink="/paymentadvicenote">
+                    <i class="fa fa-dashboard"></i>Payment Advice Note
+                  </a>
+                </li>
+                <li>
+                    <a href="#" routerLink="/udvdata">
+                      <i class="fa fa-upload"></i>
+                      <span>Upload Files</span>
+                    </a>
+                  </li>
+                  <li>
+                      <a routerLink="/viewhistory">
+                        <i class="fa fa-book"></i>
+                        View Reports
+                      </a>
+                    </li>
+                    <li>
+                      <a routerLink="/vendorlist">
+                        <i class="fa fa-book"></i>
+                        Vendor List
+                      </a>
+                    </li>
+                    <li>
+                        <a routerLink="/paymentadvicenotepending">
+                          <i class="fa fa-book"></i>
+                          <span>Bank pending list</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a routerLink="/sapbpcspending">
+                          <i class="fa fa-book"></i>
+                          <span> SAP/BPCS records pending</span>
+                        </a>
+                      </li>
+            
+          </ul>
         </li>
-          <li>
-            <a routerLink="/paymentadvicenote">
-              <i class="fa fa-dashboard"></i> <span>Payment Advice Note</span>
+        
+        <li class="treeview" style="height: auto;">
+            <a href="#">
+              <i class="fa fa-pie-chart"></i>
+              <span>Duplicate Records</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
             </a>
+            <ul class="treeview-menu" style="display: none;">
+                <li>
+                    <a routerLink="/paymentadvicenote">
+                      <i class="fa fa-dashboard"></i>Payment Advice Note
+                    </a>
+                  </li>
+                  <li>
+                      <a href="#" routerLink="/udvdata">
+                        <i class="fa fa-upload"></i>
+                        <span>Upload Files</span>
+                      </a>
+                    </li>
+                    <li>
+                        <a routerLink="/viewhistory">
+                          <i class="fa fa-book"></i>
+                          View Reports
+                        </a>
+                      </li>
+                      <li>
+                        <a routerLink="/vendorlist">
+                          <i class="fa fa-book"></i>
+                          Vendor List
+                        </a>
+                      </li>
+                      <li>
+                          <a routerLink="/paymentadvicenotepending">
+                            <i class="fa fa-book"></i>
+                            <span>Bank pending list</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a routerLink="/sapbpcspending">
+                            <i class="fa fa-book"></i>
+                            <span> SAP/BPCS records pending</span>
+                          </a>
+                        </li>
+              
+            </ul>
           </li>
-        <li class="treeview" >
-          <a href="#" routerLink="/udvdata">
-            <i class="fa fa-upload"></i>
-            <span>Upload Files</span>
-          </a>
-        </li>
-        <li>
-          <a routerLink="/viewhistory">
-            <i class="fa fa-book"></i>
-            <span>View Reports</span>
-          </a>
-        </li>
-        <li>
-          <a routerLink="/vendorlist">
-            <i class="fa fa-book"></i>
-            <span>Vendor List</span>
-          </a>
-        </li>
+        
+        
         <!--<li>
             <a routerLink="/duplicatepayment">
               <i class="fa fa-book"></i>
               <span>Duplicate Payment</span>
             </a>
           </li>-->
-          <li>
-              <a routerLink="/paymentadvicenotepending">
-                <i class="fa fa-book"></i>
-                <span>Bank pending list</span>
-              </a>
-            </li>
-            <li>
-              <a routerLink="/sapbpcspending">
-                <i class="fa fa-book"></i>
-                <span> SAP/BPCS records pending</span>
-              </a>
-            </li>
+         
            
       </ul>
     </section>
