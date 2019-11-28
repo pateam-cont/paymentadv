@@ -10,7 +10,7 @@ const httpOptions = {
 })
 export class UploadFileService {
 
-  env='prod';
+  env='dev';
   baseurl=""
   url
   fileurl="https://krios.azurewebsites.net/"
